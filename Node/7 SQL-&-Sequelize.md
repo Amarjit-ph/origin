@@ -47,7 +47,7 @@ module.exports = pool.promise();
 2 - Create Controller<br> 
 3 - Create Views<br>
 
-REQUEST USING MODEL
+## 1. REQUEST USING MODEL
 ```js
 /*
   NAME : PRODUCT MODEL 
@@ -84,6 +84,7 @@ module.exports = class Product {
 };
 ```
 
+## 2. CREATE CONTROLLER
 ```js
 /*
   NAME : CONTROLLER 
@@ -181,6 +182,8 @@ exports.getCheckout = (req, res, next) => {
 };
 ```
 
+## 3. RENDER TO TEMPLATE
+
 # Sequelize ORM
 
 ### **OBJECT RELATION MAPPING LIBRARY**-https://sequelize.org/
@@ -190,3 +193,299 @@ Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite an
 - Instances - `const user = User.build()`
 - Queries - `User.findAll()`
 - Associations - `User.hasMany(Product)`
+
+## CREATE A CONNECTION
+```js
+/*
+  NAME : DATABASE 
+  PATH : /util/database.js
+*/
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('node-complete', 'root', 'nodecomplete', {
+  dialect: 'mysql',
+  host: 'localhost'
+});
+
+module.exports = sequelize;
+```
+
+## 1. CREATE A MODEL
+```js
+/*
+  NAME : PRODUCT MODEL
+  PATH : /models/product.js
+*/
+const Sequelize = require('sequelize');
+const sequelize = require('../util/database');
+const Product = sequelize.define('product', {
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true
+  },
+  title: Sequelize.STRING,
+  price: {
+    type: Sequelize.DOUBLE,
+    allowNull: false
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+});
+
+module.exports = Product;
+
+```
+
+## 2. CREATE A CONTROLLER
+
+```js
+/*
+  NAME : PRODUCT MODEL
+  PATH : /controller/shop.js
+*/
+const Product = require('../models/product');
+
+exports.getProducts = (req, res, next) => {
+  Product.findAll()
+    .then(products => {
+      res.render('shop/product-list', {
+        prods: products,
+        pageTitle: 'All Products',
+        path: '/products'
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getProduct = (req, res, next) => {
+  const prodId = req.params.productId;
+  Product.findById(prodId)
+    .then(product => {
+      res.render('shop/product-detail', {
+        product: product,
+        pageTitle: product.title,
+        path: '/products'
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getIndex = (req, res, next) => {
+  Product.findAll()
+    .then(products => {
+      res.render('shop/index', {
+        prods: products,
+        pageTitle: 'Shop',
+        path: '/'
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getCart = (req, res, next) => {
+  req.user
+    .getCart()
+    .then(cart => {
+      return cart
+        .getProducts()
+        .then(products => {
+          res.render('shop/cart', {
+            path: '/cart',
+            pageTitle: 'Your Cart',
+            products: products
+          });
+        })
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
+};
+
+exports.postCart = (req, res, next) => {
+  const prodId = req.body.productId;
+  let fetchedCart;
+  let newQuantity = 1;
+  req.user
+    .getCart()
+    .then(cart => {
+      fetchedCart = cart;
+      return cart.getProducts({ where: { id: prodId } });
+    })
+    .then(products => {
+      let product;
+      if (products.length > 0) {
+        product = products[0];
+      }
+
+      if (product) {
+        const oldQuantity = product.cartItem.quantity;
+        newQuantity = oldQuantity + 1;
+        return product;
+      }
+      return Product.findById(prodId);
+    })
+    .then(product => {
+      return fetchedCart.addProduct(product, {
+        through: { quantity: newQuantity }
+      });
+    })
+    .then(() => {
+      res.redirect('/cart');
+    })
+    .catch(err => console.log(err));
+};
+
+exports.postCartDeleteProduct = (req, res, next) => {
+  const prodId = req.body.productId;
+  req.user
+    .getCart()
+    .then(cart => {
+      return cart.getProducts({ where: { id: prodId } });
+    })
+    .then(products => {
+      const product = products[0];
+      return product.cartItem.destroy();
+    })
+    .then(result => {
+      res.redirect('/cart');
+    })
+    .catch(err => console.log(err));
+};
+
+exports.postOrder = (req, res, next) => {
+  let fetchedCart;
+  req.user
+    .getCart()
+    .then(cart => {
+      fetchedCart = cart;
+      return cart.getProducts();
+    })
+    .then(products => {
+      return req.user
+        .createOrder()
+        .then(order => {
+          return order.addProducts(
+            products.map(product => {
+              product.orderItem = { quantity: product.cartItem.quantity };
+              return product;
+            })
+          );
+        })
+        .catch(err => console.log(err));
+    })
+    .then(result => {
+      return fetchedCart.setProducts(null);
+    })
+    .then(result => {
+      res.redirect('/orders');
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getOrders = (req, res, next) => {
+  req.user
+    .getOrders({include: ['products']})
+    .then(orders => {
+      res.render('shop/orders', {
+        path: '/orders',
+        pageTitle: 'Your Orders',
+        orders: orders
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+```
+
+## 3. RENDER TO TEMPLATE
+
+# RELATIONS
+## ASSOCIATIONS
+
+```js
+
+const path = require('path');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const errorController = require('./controllers/error');
+const sequelize = require('./util/database');
+const Product = require('./models/product');
+const User = require('./models/user');
+const Cart = require('./models/cart');
+const CartItem = require('./models/cart-item');
+const Order = require('./models/order');
+const OrderItem = require('./models/order-item');
+
+const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+  User.findById(1)
+    .then(user => {
+      req.user = user;
+      next();
+    })
+    .catch(err => console.log(err));
+});
+
+app.use('/admin', adminRoutes);
+app.use(shopRoutes);
+
+app.use(errorController.get404);
+
+Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
+User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
+Order.belongsTo(User);
+User.hasMany(Order);
+Order.belongsToMany(Product, { through: OrderItem });
+
+sequelize
+  // .sync({ force: true })
+  .sync()
+  .then(result => {
+    return User.findById(1);
+    // console.log(result);
+  })
+  .then(user => {
+    if (!user) {
+      return User.create({ name: 'Max', email: 'test@test.com' });
+    }
+    return user;
+  })
+  .then(user => {
+    // console.log(user);
+    return user.createCart();
+  })
+  .then(cart => {
+    app.listen(3000);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+
+```
