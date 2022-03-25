@@ -25,7 +25,7 @@ cout<< cars[0];
 cars[0] = "Volvo";
 ```
 
-## Traversing Through an Array=
+## Traversing Through an Array
 ```c++
 string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 for(int i = 0; i < 4; i++) {
