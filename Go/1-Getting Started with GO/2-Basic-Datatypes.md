@@ -1,4 +1,5 @@
 # Datatypes
+
 Data type is an important concept in programming. Data type specifies the size and type of variable values.
 
 Go is statically typed, meaning that once a variable type is defined, it can only store data of that type.
@@ -9,16 +10,18 @@ Go has three basic data types:
 - Numeric: represents integer types, floating point values, and complex types
 - string: represents a string value
 
-# Comments, Scam & Printing 
+# Comments, Scan & Printing
 
 Comments are similar to C++
 
 ## Printing
+
 - Import from the fmt package
 - `fmt.Printf()` prints a string
 - `fmt.Printf("Hi %s",x)` conversion character from argument
 
 ## Scan
+
 - Scan reads user input
 - Takes a pointer as an argument
 - Typed data is written to pointer
@@ -31,12 +34,13 @@ Go Integer Data Types
 Integer data types are used to store a whole number without decimals, like 35, -50, or 1345000.
 
 The integer data type has two categories:
+
 - Signed integers - can store both positive and negative values
-Unsigned integers - can only store non-negative values
-Tip: The default type for integer is int. If you do not specify a type, the type will be int.
+  Unsigned integers - can only store non-negative values
+  Tip: The default type for integer is int. If you do not specify a type, the type will be int.
 
 - Signed Integers
-Signed integers, declared with one of the int keywords, can store both positive and negative values:
+  Signed integers, declared with one of the int keywords, can store both positive and negative values:
 
 ```go
 // Generic int declaration
@@ -45,8 +49,9 @@ var x int
 // Different lengths and signs
 int8, int16, int32, int64, uint8, uint16, uint32, uint64
 ```
+
 | Type  | Size                                                                        | Range                                                                                                         |
-|-------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| ----- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | int   | Depends on platform: 32 bits in 32 bit systems and 64 bit in 64 bit systems | -2147483648 to 2147483647 in 32 bit systems and -9223372036854775808 to 9223372036854775807 in 64 bit systems |
 | int8  | 8 bits/1 byte                                                               | -128 to 127                                                                                                   |
 | int16 | 16 bits/2 byte                                                              | -32768 to 32767                                                                                               |
@@ -66,12 +71,13 @@ func main() {
 ```
 
 # Float DataType
+
 The float data types are used to store positive and negative numbers with a decimal point, like 35.3, -2.34, or 3597.34987.
 
 The float data type has two keywords:
-| Type    | Size    | Range                   |
+| Type | Size | Range |
 |---------|---------|-------------------------|
-| float32 | 32 bits | -3.4e+38 to 3.4e+38.    |
+| float32 | 32 bits | -3.4e+38 to 3.4e+38. |
 | float64 | 64 bits | -1.7e+308 to +1.7e+308. |
 
 ```go
@@ -87,6 +93,7 @@ func main() {
 ```
 
 # String DataType
+
 The string data type is used to store a sequence of characters (text). String values must be surrounded by double quotes:
 
 String package in Golang - https://www.geeksforgeeks.org/string-package-in-golang/
@@ -107,6 +114,7 @@ func main() {
 ```
 
 # Variable Scope
+
 The places in code where a variable can be accessed
 
 ```go
@@ -118,6 +126,7 @@ func g(){
     fmt.Printf("%d",x)
 }
 ```
+
 ```go
 func f(){
     var x = 4
@@ -129,6 +138,7 @@ func g(){
 ```
 
 ## Block
+
 A sequence of declarations and statements within matching brackets, `{}`
 
 - Including function definitions
@@ -139,13 +149,17 @@ A sequence of declarations and statements within matching brackets, `{}`
 - "if","for","switch" - all code inside the statement
 
 ## Lexical Scoping
+
 - Go is lexically scoped using block
 - bi > bj if bj is defined inside bi
 
 ## Scope of Variables
+
 Variable accessible from block bj if
+
 1. Variable is declared in block bi, and
 2. bi >= bj
+
 # Pointers
 
 A pointer is an address to data in memory
@@ -161,6 +175,7 @@ var ip *int     //ip is pointer to int
 ip = &x         //ip now points to x
 y = *ip         //y is now 1
 ```
+
 ## New
 
 - Alternate way to create a variable
@@ -173,29 +188,36 @@ ptr := new(int)
 ```
 
 # Deallocating Memory
+
 - When a variable is no longer needed it should be deallocated
 - Memory space is made available
 - Otherwise we will eventually run out of memory
+
 ```go
 func f(){
     var x = 4
     fmt.Printf("%d",x)
 }
 ```
+
 - Each call f() creates an integer
 
 ## Stack vs Heap
+
 Stack - Dedicated to function calls<br>
+
 - Local Variables are stored here
 - Deallocated after function complete
-Heap -Heap is persisted
+  Heap -Heap is persisted
 
 ## Manual Deallocation
+
 - Data on the heap must be deallocated when it is done being used
 - In most complied languages it is done manually
 - Error-prone but fast
 
 # Garbage Collection
+
 Garbage collection refers to the process of managing heap memory allocation: free the memory allocations that are no longer in use and keep the memory allocations that are being used
 
 - Interpreted Languages, this is done by interpreter
@@ -203,7 +225,8 @@ Garbage collection refers to the process of managing heap memory allocation: fre
 - Easy for the programmer
 - Slow (Need an interpreter)
 
-## Garbage collection in GO 
+## Garbage collection in GO
+
 - Go is a complied language which enables garbage collection
 - Implementation is fast
 - Complier determines stack vs heap
@@ -212,16 +235,19 @@ Garbage collection refers to the process of managing heap memory allocation: fre
 # Constant
 
 Expression whose value is know at compile time
+
 - Type is inferred from right hand side (boolean,string,number)
+
 ```go
 const x = 1.3
-const ( 
+const (
   y=4
   z="Hi"
 )
 ```
 
 ## Iota
+
 - Generate a set of related but distinct constants
 - Often represents a property which has several distinct values
 - Constants must be different but actual value is not important
@@ -238,16 +264,17 @@ const (
   F
 )
 ```
+
 - Each constant is assigned to a unique integer
 - Starts at 1 and increments
 
 # Control structures
 
 ## The if Statement
+
 Use the if statement to specify a block of Go code to be executed if a condition is true.
 
 Note that if is in lowercase letters. Uppercase letters (If or IF) will generate an error.
-
 
 ```go
 package main
@@ -259,7 +286,9 @@ func main() {
   }
 }
 ```
+
 ## The if else Statement
+
 ```go
 package main
 import ("fmt")
@@ -273,6 +302,7 @@ func main() {
   }
 }
 ```
+
 ## The else if Statement
 
 ```go
@@ -292,6 +322,7 @@ func main() {
 ```
 
 ## The Nested if Statement
+
 ```go
 package main
 import ("fmt")
@@ -308,7 +339,9 @@ func main() {
   }
 }
 ```
+
 ## Loops
+
 The for loop loops through a block of code a specified number of times.
 The for loop is the only loop available in Go.
 
@@ -317,6 +350,7 @@ Loops are handy if you want to run the same code over and over again, each time 
 - `Statement1` Initializes the loop counter value.
 - `Statement2` Evaluated for each loop iteration. If it evaluates to TRUE, the loop continues. If it evaluates to FALSE, the loop ends.
 - `Statement3` Increases the loop counter value.
+
 ```go
 package main
 import ("fmt")
@@ -329,6 +363,7 @@ func main() {
 ```
 
 ## Nested Loops
+
 It is possible to place a loop inside another loop.
 
 ```go
@@ -347,10 +382,10 @@ func main() {
 ```
 
 ## The Range Keyword
+
 The range keyword is used to more easily iterate over an array, slice or map. It returns both the index and the value.
 
 The range keyword is used like this:
-
 
 ```go
 package main
@@ -366,6 +401,7 @@ func main() {
 ```
 
 ## Switch
+
 The switch Statement
 Use the switch statement to select one of many code blocks to be executed.
 
@@ -415,7 +451,9 @@ switch{
 ```
 
 ## Break & Continue
+
 Break exits the containing loop
+
 ```go
 i:=0
 for i<10{
@@ -424,6 +462,7 @@ for i<10{
   fmt.Printf("hi)
 }
 ```
+
 Continue skips the rest of the current iteration
 
 ```go
