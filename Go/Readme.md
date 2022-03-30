@@ -1,3 +1,7 @@
+# GO
+
+Build fast, reliable, and efficient software at scale
+
 # References
 
 - Go - Build fast, reliable, and efficient software at scale - https://go.dev/
