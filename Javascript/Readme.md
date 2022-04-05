@@ -5,3 +5,6 @@ JavaScript, often abbreviated JS, is a programming language that is one of the c
 
 # References
 - W3 School - https://www.w3schools.com/js/
+
+# Interview Question
+- Interview Bit - https://www.interviewbit.com/javascript-interview-questions/
