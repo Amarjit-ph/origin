@@ -43,9 +43,13 @@ MARTERIAL DESIGN
 - React Material Web Components - https://rmwc.io/
 - React Material Design for Bootstrap - https://mdbootstrap.com/docs/react/
 
+# Useful Sites
+
+- React Typescript - https://react-typescript-cheatsheet.netlify.app/
+
 # Guides
 
-- https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
+- How to use TypeScript with React 18 alph - https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
 - A Beginner’s Guide to Loops in React JSX -https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx
 - Destructuring Props in React - https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
 
