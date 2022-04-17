@@ -36,6 +36,7 @@ REACT_APP_API = process.env.API
 - Tamagui - https://tamagui.dev/
 - Theme UI - https://theme-ui.com/
 - Rebass -https://rebassjs.org/
+- Mantine - https://mantine.dev/
 
 MARTERIAL DESIGN
 
