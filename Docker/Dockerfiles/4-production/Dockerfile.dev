@@ -1,0 +1,4 @@
+# DOCKER FILE FOR DEVELOPMENT GRADE OF NGINX 
+
+FROM nginx
+COPY . /usr/share/nginx/html

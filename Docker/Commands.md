@@ -23,6 +23,7 @@ BUILD IMAGE
 
 - docker build . - `Docker build command`
 - docker build -t amarjitpheiroijam/mymongoimage:latest . - `Image with name tag`
+- docker build -f Dockerfile.dev -t amarjitpheiroijam/reactapp . -`Build with Development mode`
 
 DOCKER COMPOSE
 
