@@ -25,5 +25,10 @@ BUILD IMAGE
 - docker build -t amarjitpheiroijam/mymongoimage:latest . - `Image with name tag`
 
 DOCKER COMPOSE
+
 docker-compose up --build - `Containerise & run`
 docker-compose down
+
+VOLUME
+
+docker run -p 8080:80 -v $(pwd):/usr/share/nginx/html myweb
