@@ -53,6 +53,8 @@ MARTERIAL DESIGN
 - How to use TypeScript with React 18 alph - https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
 - A Beginner’s Guide to Loops in React JSX -https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx
 - Destructuring Props in React - https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
+- React hooks - working with state (array of objects) - https://dev.to/joelynn/react-hooks-working-with-state-arrays-2n2g
+- Build a CRUD application in React with Firebase Web SDK v9 - https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/
 
 # References
 
