@@ -57,6 +57,10 @@ MARTERIAL DESIGN
 - Build a CRUD application in React with Firebase Web SDK v9 - https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/
 - Using Dexie.js in React apps for offline data storage - https://blog.logrocket.com/dexie-js-indexeddb-react-apps-offline-data-storage/
 
+# Notes
+
+- Difference between PWA & RWA -https://www.linkedin.com/pulse/what-pwa-rwa-difference-between-both-parin-thakrar/?trk=public_profile_article_view
+
 # References
 
 - W3 School - https://www.w3schools.com/REACT/DEFAULT.ASP

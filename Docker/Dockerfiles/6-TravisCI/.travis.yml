@@ -1,7 +1,28 @@
+sudo: required
 services:
     - docker
 before_install:
     - docker build -t dockeryoutube -f Dockerfile.dev
 script: 
-    - docker run dockeryoutube npm run test
+    - docker run -e CI=true dockeryoutube npm run test
+
+# AWS ELASTIC BEANSTALK
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
+  region: "us-east-1"
+  app: "example-app-name"
+  env: "example-app-environment"
+  bucket_name: "the-target-S3-bucket"
+  on:
+    branch: master
+    
+
+
+
+
+
 
