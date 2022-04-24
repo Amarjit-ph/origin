@@ -56,6 +56,7 @@ MARTERIAL DESIGN
 - React hooks - working with state (array of objects) - https://dev.to/joelynn/react-hooks-working-with-state-arrays-2n2g
 - Build a CRUD application in React with Firebase Web SDK v9 - https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/
 - Using Dexie.js in React apps for offline data storage - https://blog.logrocket.com/dexie-js-indexeddb-react-apps-offline-data-storage/
+- Firebase Real Time Read data - https://firebase.google.com/docs/firestore/query-data/listen?hl=en&authuser=0#web-version-9
 
 # Notes
 
