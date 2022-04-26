@@ -57,6 +57,7 @@ MARTERIAL DESIGN
 - Build a CRUD application in React with Firebase Web SDK v9 - https://blog.logrocket.com/build-crud-application-react-firebase-web-sdk-v9/
 - Using Dexie.js in React apps for offline data storage - https://blog.logrocket.com/dexie-js-indexeddb-react-apps-offline-data-storage/
 - Firebase Real Time Read data - https://firebase.google.com/docs/firestore/query-data/listen?hl=en&authuser=0#web-version-9
+- How to upload and preview images in React.JS - https://medium.com/geekculture/how-to-upload-and-preview-images-in-react-js-4e22a903f3db#:~:text=First%20lets%20create%20a%20way%20for%20our%20user%20to%20upload%20images&text=In%20our%20render%20function%20we,our%20user%20to%20interact%20with.&text=We%20are%20setting%20an%20input,user%20can%20upload%20multiple%20images.
 
 # Notes
 
