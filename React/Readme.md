@@ -58,6 +58,8 @@ MARTERIAL DESIGN
 - Using Dexie.js in React apps for offline data storage - https://blog.logrocket.com/dexie-js-indexeddb-react-apps-offline-data-storage/
 - Firebase Real Time Read data - https://firebase.google.com/docs/firestore/query-data/listen?hl=en&authuser=0#web-version-9
 - How to upload and preview images in React.JS - https://medium.com/geekculture/how-to-upload-and-preview-images-in-react-js-4e22a903f3db#:~:text=First%20lets%20create%20a%20way%20for%20our%20user%20to%20upload%20images&text=In%20our%20render%20function%20we,our%20user%20to%20interact%20with.&text=We%20are%20setting%20an%20input,user%20can%20upload%20multiple%20images.
+- How To Use Axios With React: The Definitive Guide (2021) - https://www.freecodecamp.org/news/how-to-use-axios-with-react/
+- Image Crop Using ReactJS - "react-image-crop": "^8.6.12", - https://levelup.gitconnected.com/image-crop-using-react-js-37e10208c572
 
 # Notes
 
