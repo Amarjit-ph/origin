@@ -16,3 +16,6 @@ Python is a high-level, general-purpose programming language. Its design philoso
 - Python Crash Course For Beginners - https://www.youtube.com/watch?v=JJmcL1N2KQs&t=2268s
 - REST API With Flask & SQL Alchemy - https://www.youtube.com/watch?v=PTZiDnuC86g
 - Python Django Tutorial for Beginners - https://www.youtube.com/watch?v=rHux0gMZ3Eg&t=3199s
+- The Complete Guide to Python Virtual Environments - https://www.youtube.com/watch?v=KxvKCSwlUv8
+- How to use Pipenv to Manage Python Dependencies (Tutorial) - https://www.youtube.com/watch?v=4P34NaBtMDQ
+- Learn Flask for Python - Full Tutorial - https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=1226s

@@ -120,11 +120,11 @@ We use classes to define new types.
 
 ```py
 class Point:
- def __init__(self, x, y):
- self.x = x
- self.y = y
- def move(self):
- print(“move”)
+      def __init__(self, x, y):
+      self.x = x
+      self.y = y
+      def move(self):
+      print(“move”)
 ```
 
 When a function is part of a class, we refer to it as a method.
