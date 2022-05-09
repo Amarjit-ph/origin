@@ -12,13 +12,7 @@ A JavaScript library for building user interfaces
 
 - Learn Once, Write Anywhere We don’t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
 
-# Conventions
 
-React Environments Variables
-
-```
-REACT_APP_API = process.env.API
-```
 
 # Packages
 
@@ -27,8 +21,9 @@ REACT_APP_API = process.env.API
 - React Loading Skeletion - Make beautiful, animated loading skeletons that automatically adapt to your app - https://www.npmjs.com/package/react-loading-skeleton
 - React Top Loading ba\* - https://klendi.github.io/react-top-loading-bar/ - https://klendi.github.io/react-top-loading-bar/
 - Styled Components - Use the best bits of ES6 and CSS to style your apps without stress - https://styled-components.com/
+- Web Notification - https://github.com/mobilusoss/react-web-notification
 
-# Frameworks
+# UI Frameworks
 
 - Next UI - https://nextui.org/
 - Chakra - https://chakra-ui.com/
@@ -44,9 +39,6 @@ MARTERIAL DESIGN
 - React Material Web Components - https://rmwc.io/
 - React Material Design for Bootstrap - https://mdbootstrap.com/docs/react/
 
-# Useful Sites
-
-- React Typescript - https://react-typescript-cheatsheet.netlify.app/
 
 # Guides
 
@@ -62,10 +54,18 @@ MARTERIAL DESIGN
 - Image Crop Using ReactJS - "react-image-crop": "^8.6.12", - https://levelup.gitconnected.com/image-crop-using-react-js-37e10208c572
 - Push Notification Firbase React - https://www.audreyhal.com/blog/push-notifications-with-firebase-in-react
 
-# Notes
+# Useful Sites
 
+- React Typescript - https://react-typescript-cheatsheet.netlify.app/
 - Difference between PWA & RWA -https://www.linkedin.com/pulse/what-pwa-rwa-difference-between-both-parin-thakrar/?trk=public_profile_article_view
 
+# Conventions
+
+React Environments Variables
+
+```
+REACT_APP_API = process.env.API
+```
 # References
 
 - W3 School - https://www.w3schools.com/REACT/DEFAULT.ASP
