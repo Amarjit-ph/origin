@@ -10,7 +10,10 @@ Cascading Style Sheets is a style sheet language used for describing the present
 # References
 - W3 School - https://www.w3schools.com/css/
 
-# Website & Blogs
+# Useful Sites
 - Tailwind list -https://www.tailwindawesome.com/?type=kit
+
+# Blogs
+
 - Free Tailwind Components - https://dev.to/narottam04/free-tailwind-components-for-your-next-project-2gka
 - Free Tailwind Templates https://dev.to/mariann93502220/30-free-tailwind-css-templates-to-kick-start-your-next-project-3igo
