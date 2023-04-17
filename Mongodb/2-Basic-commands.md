@@ -22,6 +22,14 @@ mongorestore --uri "mongodb+srv://<your username>:<your password>@<your cluster>
 /// Import with JSON 
 mongoimport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --drop sales.json
 ```
+## LOCAL
+```
+mongodump --db dbName --out /path/to/your/dump/folder
+mongorestore --db dbName --dir /path/to/your/dump/folder
+```
+
+
+
 # CONNECT
 ```
 mongo # connects to mongodb://127.0.0.1:27017 by default
