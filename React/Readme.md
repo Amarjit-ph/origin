@@ -39,7 +39,6 @@ MARTERIAL DESIGN
 - React Material Web Components - https://rmwc.io/
 - React Material Design for Bootstrap - https://mdbootstrap.com/docs/react/
 
-
 # Guides
 
 - How to use TypeScript with React 18 alph - https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
@@ -54,6 +53,10 @@ MARTERIAL DESIGN
 - Image Crop Using ReactJS - "react-image-crop": "^8.6.12", - https://levelup.gitconnected.com/image-crop-using-react-js-37e10208c572
 - Push Notification Firbase React - https://www.audreyhal.com/blog/push-notifications-with-firebase-in-react
 - React use-sound - https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
+
+# Architecture
+ 
+ - Level up your React architecture with MVVM - https://medium.cobeisfresh.com/level-up-your-react-architecture-with-mvvm-a471979e3f21
 
 # Useful Sites
 
