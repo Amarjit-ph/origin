@@ -91,9 +91,9 @@ Datatype modifiers are used with the built-in data types to modify the length of
 | unsigned long long int | 8               | 0 to 18,446,744,073,709,551,615 |
 | signed char            | 1               | -128 to 127                     |
 | unsigned char          | 1               | 0 to 255                        |
-| float                  | 4               |                                 |
-| double                 | 8               |                                 |
-| long double            | 12              |                                 |
+| float                  | 4               | ±1.2E-38 to ±3.4E+38            |
+| double                 | 8               | ±2.3E-308 to ±1.7E+308          |
+| long double            | 12              | ±3.4E-4932 to ±1.1E+4932        |
 | wchar_t                | 2 or 4          | 1 wide character                |
 
 # Variable
